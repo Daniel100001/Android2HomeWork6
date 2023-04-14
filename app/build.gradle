@@ -31,14 +31,14 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures{
+    buildFeatures {
         viewBinding = true
     }
 }
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.core:core-ktx:1.10.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -47,12 +47,17 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
     def navVersion = "2.5.3"
-// implementation
+// nav_graph
     implementation "androidx.navigation:navigation-fragment-ktx:$navVersion"
     implementation "androidx.navigation:navigation-ui-ktx:$navVersion"
     implementation 'com.airbnb.android:lottie:4.2.0'
+    // View Pager
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
 
-    implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:4.1.2'
+
+    //Lottie
+
+    implementation 'com.airbnb.android:lottie:4.2.0'
 
 
 }
