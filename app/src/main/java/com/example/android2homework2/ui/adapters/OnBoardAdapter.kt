@@ -9,6 +9,7 @@ import com.example.android2homework2.ui.onBoard.OnBoardPagingFragment.Companion.
 class OnBoardAdapter(
     fragment: Fragment
 ) : FragmentStateAdapter(fragment) {
+
     override fun getItemCount(): Int {
         return 3
     }

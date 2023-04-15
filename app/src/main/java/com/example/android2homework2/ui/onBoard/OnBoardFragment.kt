@@ -1,25 +1,20 @@
 package com.example.android2homework2.ui.onBoard
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TableLayout
-import android.widget.TextView
-import androidx.core.content.ContextCompat
 import androidx.core.view.isInvisible
-import com.example.android2homework2.R
+import androidx.viewpager2.widget.ViewPager2
 import com.example.android2homework2.databinding.FragmentOnBoardBinding
 import com.example.android2homework2.ui.adapters.OnBoardAdapter
-import com.google.android.material.tabs.TabLayoutMediator
+import com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+
 
 class OnBoardFragment : Fragment() {
 
-
     private lateinit var binding: FragmentOnBoardBinding
-    private var text: TextView? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,38 +26,27 @@ class OnBoardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        text = view.findViewById(R.id.next_txt)
-        initialization()
-        clickButton()
+        initialize()
+        clickForTextView()
     }
 
-
-    private fun initialization() {
+    private fun initialize() {
         binding.viewPager.adapter = OnBoardAdapter(this@OnBoardFragment)
-        TabLayoutMediator(binding.tableLayout, binding.viewPager) { tab, pos ->
-            when (pos) {
-                0 -> {
-                    tab.setIcon(R.drawable.graypoint)
-
-                }
-                1 -> {
-                    tab.setIcon(R.drawable.graypoint)
-                }
-                2 -> {
-                    tab.setIcon(R.drawable.graypoint)
-                }
-
-
-            }
-        }.attach()
+        val indicator: DotsIndicator = binding.dotsIndicator
+        indicator.setViewPager2(binding.viewPager)
     }
 
-    private fun clickButton() = with(binding.viewPager) {
-        binding.nextTxt.setOnClickListener() {
+    private fun clickForTextView() = with(binding.viewPager) {
+        binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                binding.nextTxt.isInvisible = currentItem == 2
+            }
+        })
+
+        binding.nextTxt.setOnClickListener {
             if (currentItem < 2) {
                 setCurrentItem(currentItem + 1, true)
             }
         }
     }
-
 }

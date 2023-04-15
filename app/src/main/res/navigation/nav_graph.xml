@@ -9,16 +9,16 @@
         android:id="@+id/onBoardFragment"
         android:name="com.example.android2homework2.ui.onBoard.OnBoardFragment"
         android:label="fragment_on_board"
-        tools:layout="@layout/fragment_on_board" />
-    <fragment
-        android:id="@+id/onBoardPagingPFragment"
-        android:name="com.example.android2homework2.ui.onBoard.OnBoardPagingFragment"
-        android:label="fragment_on_board_paging_p"
-        tools:layout="@layout/fragment_on_board_paging" >
-
+        tools:layout="@layout/fragment_on_board" >
         <action
-            android:id="@+id/action_onBoardPagingPFragment_to_homeFragment"
+            android:id="@+id/action_onBoardFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onBoardPagingFragment"
+        android:name="com.example.android2homework2.ui.onBoard.OnBoardPagingFragment"
+        android:label="OnBoardPagingFragment"
+        tools:layout="@layout/fragment_on_board_paging">
 
     </fragment>
     <fragment
@@ -26,5 +26,6 @@
         android:name="com.example.android2homework2.ui.fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
-
 </navigation>
+
+
