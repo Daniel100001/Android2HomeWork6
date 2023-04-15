@@ -15,7 +15,6 @@ class OnBoardPagingFragment : Fragment() {
 
     private lateinit var binding: FragmentOnBoardPagingBinding
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,7 +29,6 @@ class OnBoardPagingFragment : Fragment() {
         const val TEXT_ONBOARD2 = "Быстрый, качественный продукт"
         const val TEXT_ONBOARD3 = "Куча функций и интересных фишек"
         const val BEGINNING_OF_WORK = "Начать работу"
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
