@@ -1,4 +1,4 @@
-package com.example.android2homework2.ui.onBoard
+package com.example.android2homework2.ui.fragments.onBoard
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -31,9 +31,10 @@ class OnBoardFragment : Fragment() {
     }
 
     private fun initialize() {
-        binding.viewPager.adapter = OnBoardAdapter(this@OnBoardFragment)
+        val adapter = OnBoardAdapter(this@OnBoardFragment)
+        binding.viewPager.adapter = adapter
         val indicator: DotsIndicator = binding.dotsIndicator
-        indicator.setViewPager2(binding.viewPager)
+        indicator.attachTo(binding.viewPager)
     }
 
     private fun clickForTextView() = with(binding.viewPager) {

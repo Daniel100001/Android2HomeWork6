@@ -1,13 +1,11 @@
-package com.example.android2homework2.ui.onBoard
+package com.example.android2homework2.ui.fragments.onBoard
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.navigation.fragment.findNavController
-import com.airbnb.lottie.LottieDrawable
 import com.example.android2homework2.R
 import com.example.android2homework2.databinding.FragmentOnBoardPagingBinding
 
@@ -25,46 +23,34 @@ class OnBoardPagingFragment : Fragment() {
 
     companion object {
         const val ARG_POSITION = "onBoard"
-        const val TEXT_ONBOARD1 = "Очень удобный функционал"
-        const val TEXT_ONBOARD2 = "Быстрый, качественный продукт"
-        const val TEXT_ONBOARD3 = "Куча функций и интересных фишек"
-        const val BEGINNING_OF_WORK = "Начать работу"
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initialization()
-        setOnTextClickListener()
+        setUpListener()
     }
 
     private fun initialization() = with(binding) {
         when (requireArguments().getInt(ARG_POSITION)) {
             0 -> {
-                onTxt.text = TEXT_ONBOARD1
-                animationView.repeatCount = LottieDrawable.INFINITE
-                animationView.repeatMode = LottieDrawable.REVERSE
+                onTxt.text = getString(R.string.OnBoardPagingText)
                 animationView.setAnimation(R.raw.anim1)
             }
             1 -> {
-                onTxt.text = TEXT_ONBOARD2
-                animationView.repeatCount = LottieDrawable.INFINITE
-                animationView.repeatMode = LottieDrawable.REVERSE
+                onTxt.text = getString(R.string.OnBoardText2)
                 animationView.setAnimation(R.raw.anim)
-
             }
             2 -> {
-                onTxt.text = TEXT_ONBOARD3
-                animationView.repeatCount = LottieDrawable.INFINITE
-                animationView.repeatMode = LottieDrawable.REVERSE
                 animationView.setAnimation(R.raw.anim2)
-                fragmentOnBoardPagingText.text = BEGINNING_OF_WORK
+                fragmentOnBoardPagingText.text = getString(R.string.Beginning_of_work)
             }
         }
     }
 
-    private fun setOnTextClickListener() {
-        binding.fragmentOnBoardPagingText.setOnClickListener(View.OnClickListener {
+    private fun setUpListener() {
+        binding.fragmentOnBoardPagingText.setOnClickListener {
             findNavController().navigate(R.id.action_onBoardFragment_to_homeFragment)
-        })
+        }
     }
 }

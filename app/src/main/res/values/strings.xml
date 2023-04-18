@@ -6,5 +6,8 @@
     <string name="plus">+</string>
     <string name="SearchNotes">Поиск Заметок</string>
     <string name="notes">Заметки</string>
-    <string name="OnBoardPagingText1">Очень удобный функционал</string>
+    <string name="OnBoardPagingText">Очень удобный функционал</string>
+    <string name="OnBoardText2">Быстрый, качественный продукт</string>
+    <string name="OnBoardText3">Куча функций и интересных фишек</string>
+    <string name="Beginning_of_work">Начать работу</string>
 </resources>
