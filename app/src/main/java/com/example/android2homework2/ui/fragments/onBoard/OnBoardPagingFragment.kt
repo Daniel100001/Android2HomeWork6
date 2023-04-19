@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.android2homework2.R
 import com.example.android2homework2.databinding.FragmentOnBoardPagingBinding
+import com.example.android2homework2.utils.PreferenceHelper
 
 class OnBoardPagingFragment : Fragment() {
 
@@ -50,7 +51,10 @@ class OnBoardPagingFragment : Fragment() {
 
     private fun setUpListener() {
         binding.fragmentOnBoardPagingText.setOnClickListener {
+            val preferenceHelper = PreferenceHelper()
+            preferenceHelper.unit(requireContext())
+            preferenceHelper.saveBoolean = true
             findNavController().navigate(R.id.action_onBoardFragment_to_homeFragment)
+            }
         }
     }
-}

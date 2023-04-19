@@ -19,28 +19,26 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentHomeBinding.inflate(inflater,container, false)
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        showOnBoardForNewUser()
+        initialize()
     }
 
-    private fun showOnBoardForNewUser() {
+    private fun initialize() {
         val preferenceHelper = PreferenceHelper()
         preferenceHelper.unit(requireContext())
-        if (!preferenceHelper.isShown()) {
-            showOnBoard()
-            preferenceHelper.onSaveOnBoardState()
+        val check = preferenceHelper.saveBoolean
+
+        if (check == false) {
+            val navController = findNavController()
+            val navGraph = navController.navInflater.inflate(R.navigation.nav_graph)
+            navGraph.setStartDestination(R.id.onBoardFragment)
+            navController.graph = navGraph
         }
     }
-
-    private fun showOnBoard() {
-        val navController = findNavController()
-        navController.navigate(R.id.onBoardFragment)
-    }
-
 }

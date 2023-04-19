@@ -10,11 +10,7 @@ class PreferenceHelper {
     fun unit(context: Context){
         sharedPreference = context.getSharedPreferences("settings", Context.MODE_PRIVATE)
     }
-
-    fun onSaveOnBoardState(){
-        sharedPreference!!.edit().putBoolean("isShown",true).apply()
-    }
-    fun isShown(): Boolean{
-        return sharedPreference!!.getBoolean("isShown", false)
-    }
+    var saveBoolean
+        set(value) = sharedPreference?.edit()?.putBoolean("Bool", value!!)?.apply()!!
+        get() = sharedPreference?.getBoolean("Bool", false)
 }
