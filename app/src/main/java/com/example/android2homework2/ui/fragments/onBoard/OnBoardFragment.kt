@@ -27,7 +27,7 @@ class OnBoardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initialize()
-        clickForTextView()
+        setUpListener()
     }
 
     private fun initialize() {
@@ -37,7 +37,7 @@ class OnBoardFragment : Fragment() {
         indicator.attachTo(binding.viewPager)
     }
 
-    private fun clickForTextView() = with(binding.viewPager) {
+    private fun setUpListener() = with(binding.viewPager) {
         binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 binding.nextTxt.isInvisible = currentItem == 2
