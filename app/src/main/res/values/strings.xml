@@ -10,4 +10,5 @@
     <string name="OnBoardText2">Быстрый, качественный продукт</string>
     <string name="OnBoardText3">Куча функций и интересных фишек</string>
     <string name="Beginning_of_work">Начать работу</string>
+    <string name="add_note_button_description">add_note_button_description</string>
 </resources>

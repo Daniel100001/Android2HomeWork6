@@ -55,6 +55,6 @@ class OnBoardPagingFragment : Fragment() {
             preferenceHelper.unit(requireContext())
             preferenceHelper.saveBoolean = true
             findNavController().navigate(R.id.action_onBoardFragment_to_homeFragment)
-            }
         }
     }
+}

@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'androidx.navigation.safeargs'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -46,9 +47,8 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
-    // nav_graph
+    // Nav_graph
     def navVersion = "2.5.3"
-
     implementation "androidx.navigation:navigation-fragment-ktx:$navVersion"
     implementation "androidx.navigation:navigation-ui-ktx:$navVersion"
     implementation 'com.airbnb.android:lottie:4.2.0'
@@ -56,11 +56,15 @@ dependencies {
     // View Pager
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
 
-    //dots indicator
+    //Dots indicator
     implementation 'com.tbuonomo:dotsindicator:4.3'
 
     //Lottie
     implementation 'com.airbnb.android:lottie:4.2.0'
 
+    //Room
+    def room_version = "2.5.1"
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
 
 }

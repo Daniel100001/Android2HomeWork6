@@ -11,7 +11,6 @@ import com.example.android2homework2.databinding.FragmentOnBoardBinding
 import com.example.android2homework2.ui.adapters.OnBoardAdapter
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator
 
-
 class OnBoardFragment : Fragment() {
 
     private lateinit var binding: FragmentOnBoardBinding
