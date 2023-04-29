@@ -12,7 +12,6 @@ import com.example.android2homework2.App
 import com.example.android2homework2.R
 import com.example.android2homework2.databinding.FragmentNoteAppBinding
 import com.example.android2homework2.ui.adapters.NoteAppAdapter
-import com.example.android2homework2.utils.PreferenceHelper
 
 class NoteAppFragment : Fragment() {
 
@@ -39,18 +38,7 @@ class NoteAppFragment : Fragment() {
         binding.recyclerViewFragmentNote.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = noteAppAdapter
-
-            val preferenceHelper = PreferenceHelper()
-            preferenceHelper.unit(requireContext())
-            val check = preferenceHelper.saveBoolean
-
-            if (check == false) {
-                val navController = findNavController()
-                val navGraph = navController.navInflater.inflate(R.navigation.nav_graph)
-                navGraph.setStartDestination(R.id.onBoardFragment)
-                navController.graph = navGraph
             }
-        }
     }
 
     private fun setUpListeners() {

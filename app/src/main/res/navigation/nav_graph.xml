@@ -10,11 +10,13 @@
         android:name="com.example.android2homework2.ui.fragments.onBoard.OnBoardFragment"
         android:label="fragment_on_board"
         tools:layout="@layout/fragment_on_board">
+
         <action
-            android:id="@+id/action_onBoardFragment_to_homeFragment"
-            app:destination="@id/fragment_note_app"
+            android:id="@+id/action_onBoardFragment_to_singUpFragment"
+            app:destination="@id/singUpFragment"
             app:popUpTo="@id/onBoardFragment"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="true"
+            />
     </fragment>
 
     <fragment
@@ -38,6 +40,15 @@
         android:name="com.example.android2homework2.ui.fragments.note.detail.NoteAppDetailFragment"
         android:label="fragment_note_app_detail"
         tools:layout="@layout/fragment_note_app_detail" />
+    <fragment
+        android:id="@+id/singUpFragment"
+        tools:layout="@layout/fragment_sing_up"
+        android:name="com.example.android2homework2.ui.fragments.singup.SingUpFragment"
+        android:label="SingUpFragment" >
+        <action
+            android:id="@+id/action_singUpFragment_to_fragment_note_app2"
+            app:destination="@id/fragment_note_app" />
+    </fragment>
 
 </navigation>
 

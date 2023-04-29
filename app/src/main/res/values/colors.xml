@@ -13,4 +13,5 @@
     <color name="textDefaultColor">#818181</color>
     <color name="backgroundButtonColor">#D88B02</color>
     <color name="defaultBackgroundForFragmentOnBoard">#0E0C0C</color>
+
 </resources>
