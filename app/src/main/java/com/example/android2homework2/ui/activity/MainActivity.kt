@@ -1,10 +1,8 @@
 package com.example.android2homework2.ui.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import com.example.android2homework2.R
 import com.example.android2homework2.databinding.ActivityMainBinding
 import com.example.android2homework2.utils.PreferenceHelper

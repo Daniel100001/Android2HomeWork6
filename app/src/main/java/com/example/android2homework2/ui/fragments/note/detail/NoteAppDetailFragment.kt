@@ -1,17 +1,16 @@
 package com.example.android2homework2.ui.fragments.note.detail
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.android2homework2.App
 import com.example.android2homework2.databinding.FragmentNoteAppDetailBinding
 import com.example.android2homework2.models.NoteModel
 import java.text.SimpleDateFormat
 import java.util.*
-
 
 class NoteAppDetailFragment : Fragment() {
 
@@ -53,5 +52,4 @@ class NoteAppDetailFragment : Fragment() {
             findNavController().navigateUp()
         }
     }
-
 }

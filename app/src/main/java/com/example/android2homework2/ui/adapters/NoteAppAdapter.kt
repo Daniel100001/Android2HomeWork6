@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android2homework2.databinding.ItemNoteBinding
 import com.example.android2homework2.models.NoteModel
-import kotlin.collections.ArrayList
 
 class NoteAppAdapter : RecyclerView.Adapter<NoteAppAdapter.NoteAppViewHolder>() {
 

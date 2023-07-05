@@ -34,6 +34,5 @@ class App : Application() {
         val preferenceHelper = PreferenceHelper()
         preferenceHelper.unit(this)
         getInstate()
-
     }
 }

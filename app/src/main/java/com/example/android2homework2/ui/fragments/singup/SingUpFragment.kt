@@ -2,22 +2,16 @@ package com.example.android2homework2.ui.fragments.singup
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android2homework2.R
 import com.example.android2homework2.databinding.FragmentSingUpBinding
 import com.google.firebase.FirebaseException
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
-import com.google.firebase.auth.PhoneAuthCredential
-import com.google.firebase.auth.PhoneAuthOptions
-import com.google.firebase.auth.PhoneAuthProvider
+import com.google.firebase.auth.*
 import java.util.concurrent.TimeUnit
 
 class SingUpFragment : Fragment() {
@@ -44,7 +38,7 @@ class SingUpFragment : Fragment() {
 
     private fun setUpListener() = with(binding) {
         var check = true
-        var t = "Подтвердить"
+        val t = "Подтвердить"
         binding.g.setOnClickListener {
             if (check) {
                 startPhoneNumberVerification(editTextPhone.text.toString())

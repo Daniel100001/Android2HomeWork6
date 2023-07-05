@@ -9,7 +9,6 @@ import com.example.android2homework2.models.NoteModel
 
 @Dao
 interface NoteDao {
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(noteModel: NoteModel)
 
